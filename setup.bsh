@@ -1,0 +1,38 @@
+#!/bin/bash
+## Data science setup script
+
+# Update apt-get and install building tools
+sudo apt-get update
+sudo apt-get install build-essential
+
+# Install python package management
+sudo apt-get install python-setuptools
+sudo easy_install pip
+
+# Install IPython Notebook dependencies
+sudo apt-get install python-zmq
+sudo pip install markupsafe
+sudo pip install tornado
+
+# Install IPython
+sudo pip install ipython[notebook]
+
+# Install sci-kit learn dependencies
+sudo apt-get install build-essential python-dev python-setuptools python-numpy python-scipy libatlas-dev libatlas3gf-base
+# The line below gave me an error
+sudo update-alternatives --set libblas.so.3 /usr/lib/atlas-base/atlas/libblas.so.3
+sudo update-alternatives --set liblapack.so.3 /usr/lib/atlas-base/atlas/liblapack.so.3
+sudo apt-get install python-matplotlib
+# Install sci-kit learn
+pip install --user --install-option="--prefix=" -U scikit-learn
+# Install nltk and YAML for stemming
+sudo pip install nltk
+# Install gensim for LDA topc modeling
+sudo pip install gensim
+
+#-- 0 --
+
+#Note: Used 'chmod 755 <script name>' to make executable
+#Note: Use 'ipython notebook --no-browser' to run the notebook
+#Note: Use '%matplotlib inline' to enable plotting in IPython notebooks
+#Note: SSh tunneling is under Connection -> SSH -> Tunnels
