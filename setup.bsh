@@ -1,5 +1,5 @@
 #!/bin/bash
-## Data science setup script
+## Data science setup script 
 
 # Update apt-get and install building tools
 sudo apt-get update
